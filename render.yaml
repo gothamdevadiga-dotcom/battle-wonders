@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: battle-wonders
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start

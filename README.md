@@ -1,20 +1,18 @@
 # battle Wonders
 
-Browser-based creature battle game with a Node.js server. Each player runs their own local copy.
+Browser-based creature battle game. Deploy it once, then share the public URL. Players can open it on desktop or mobile without installing Node.js.
 
-## Download and run on Windows
+## Deploy online
 
-1. Install Node.js from https://nodejs.org/ (choose the LTS version).
-2. Download this repository as a ZIP using GitHub's **Code > Download ZIP** button.
-3. Extract the ZIP file.
-4. Double-click `start-game.bat` in the extracted folder.
-5. The game opens at http://localhost:3000. Keep the server window open while playing.
+1. Create a Render account at https://render.com/ and connect your GitHub account.
+2. In Render, create a new Blueprint and select this repository. Render will use `render.yaml` to build and start the app.
+3. When deployment finishes, share the `onrender.com` URL Render gives you. Players open that link in their browser.
 
-To stop the server, close its command window. Each friend needs to download and run their own copy; `localhost` always refers to the computer running the game.
+The free service may take a little while to wake up after being idle. Keep the service running in Render for the public link to work.
 
-## Run from a terminal
+## Run locally for development
 
-Install Node.js, open a terminal in this folder, then run `node backend/server.js` and visit http://localhost:3000.
+Install Node.js, open a terminal in this folder, and run `npm start`. Then visit http://localhost:3000.
 
 ## Project files
 

@@ -2,6 +2,7 @@ const http = require('http'), fs = require('fs'), path = require('path');
 const { newGame, startBattle, turn } = require('./engine');
 
 const FRONT = path.join(__dirname, '..', 'frontend');
+const PORT = Number(process.env.PORT) || 3000;
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css' };
 const games = new Map();
 
@@ -49,4 +50,4 @@ http.createServer(async (req, res) => {
     res.writeHead(200, { 'Content-Type': MIME[path.extname(file)] || 'application/octet-stream' });
     res.end(buf);
   });
-}).listen(3000, () => console.log('Tower Trials running at http://localhost:3000'));
+}).listen(PORT, '0.0.0.0', () => console.log(`Tower Trials running on port ${PORT}`));
