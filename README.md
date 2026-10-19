@@ -1,4 +1,4 @@
-# Pokemon Wonders
+# battle Wonders
 
 Browser-based creature battle game with a Node.js server.
 
