@@ -1,7 +1,7 @@
 const http = require('http'), fs = require('fs'), path = require('path');
 const { newGame, startBattle, turn } = require('./engine');
 
-const FRONT = path.join(__dirname, 'frontend');
+const FRONT = path.join(__dirname, '..', 'frontend');
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css' };
 const games = new Map();
 
@@ -26,7 +26,7 @@ http.createServer(async (req, res) => {
       games.set(g.id, g);
       return json(res, 200, g);
     }
-    const FRONT = path.join(__dirname, 'frontend');
+    const g = games.get(body.id || url.searchParams.get('id'));
     if (!g) return json(res, 404, { error: 'no such game' });
     if (url.pathname === '/api/state') return json(res, 200, g);
     if (url.pathname === '/api/start') {
